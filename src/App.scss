@@ -1,24 +1,96 @@
+body, #root {
+  overflow-x: hidden;
+}
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  padding: 1em 0 ;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-  .grid {
+  .list {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
     width: 100%;
-    max-width: 1260px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
 
-
-    .grid-title {
-      color: #a1a1a1;
-      font-weight: 400;
+    .list-item {
+      width: 100%;
+      max-width: 1260px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       border-bottom: 1px solid #a1a1a1;
-      padding: 10px;
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 100%;
+        min-width: 1px;
+
+        &:last-child {
+          width: max-content;
+          text-align: center;
+          margin: 0 auto;
+
+          span {
+            margin: 0 auto;
+          }
+        }
+
+        .item-title {
+          font-weight: 500;
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .item-subtitle {
+          font-size: 13px;
+          color: #a1a1a1;
+        }
+
+        .item-status {
+          color: #fff;
+          width: 120px;
+          text-align: center;
+          padding: 2px 5px;
+          border-radius: 4px;
+
+          &.new {
+            background-color: red;
+          }
+
+          &.declined {
+            background-color: black;
+          }
+          &.started {
+            background-color: blue;
+          }
+          &.assigned_to {
+            background-color: orange;
+          }
+          &.completed {
+            background-color: green;
+          }
+
+        }
+      }
+
+      .list-title {
+        color: #a1a1a1;
+        font-weight: 400;
+        padding: 10px;
+
+        &:last-child {
+          text-align: center;
+        }
+      }
     }
   }
 }

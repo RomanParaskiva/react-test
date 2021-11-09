@@ -11,6 +11,15 @@ export const formatDate = (timestamp) => {
 }
 
 export const formatUser = (user) => {
-    const formatedUser = `${user.surname}.${user.name.slice(1,1)}.${user.patronymic.slice(1,1)}`
+    const formatedUser = `${user.surname} ${user.name.slice(0,1)}.${user.patronymic.slice(0,1)}.`
     return formatedUser
+}
+
+export const handleStatus = (status) => {
+    let statusRu
+    if (status === 'new') return statusRu = 'Новое'
+    if (status === 'completed') return statusRu = 'Выполнено'
+    if (status === 'assigned_to') return statusRu = 'Назначено'
+    if (status === 'started') return statusRu = 'Выполняется'
+    if (status === 'declined') return statusRu = 'Отменено'
 }
