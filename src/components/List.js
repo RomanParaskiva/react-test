@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+    Link
+  } from "react-router-dom"
 import { formatDate, formatUser, handleStatus } from '../utils/functions'
 
 export const List = ({list}) => {
@@ -20,7 +23,7 @@ export const List = ({list}) => {
         </div>
         {list && list.map((item, i) => {
             return (
-              <div key={'item-'+ i} className="list-item">
+            <Link key={'item-'+ i} className="list-item" to={'/' + item.id} >
                 <div key={i} className="col">
                   <span className="item-title">№{item.id}</span>
                   <span className="item-subtitle">{formatDate(item.created_date)}</span>
@@ -37,7 +40,7 @@ export const List = ({list}) => {
                 <div className="col">
                   <span className={item.status + ' item-status'}>{handleStatus(item.status)}</span>
                 </div>
-              </div>
+            </Link>
             )
           })}
       </div>  

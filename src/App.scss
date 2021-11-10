@@ -23,6 +23,8 @@ body, #root {
       max-width: 1260px;
       margin: 0 auto;
       display: grid;
+      color: #000;
+      text-decoration: none;
       grid-template-columns: repeat(4, 1fr);
       border-bottom: 1px solid #a1a1a1;
 
