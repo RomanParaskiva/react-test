@@ -142,3 +142,21 @@ body, #root {
     }
   }
 }
+
+@media (max-width: 500px) {
+   .App {
+     .list {
+       .list-item {
+        
+         .col {
+           padding: 0.5rem;
+
+           .item-status{
+             width: 80px;
+             font-size: 11px;
+           }
+         }
+       }
+     }
+   } 
+}
